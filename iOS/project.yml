@@ -1,0 +1,75 @@
+name: Clawtrim
+options:
+  bundleIdPrefix: com.shimondeitel.nailtrack
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Clawtrim:
+    type: application
+    platform: iOS
+    sources:
+      - path: Clawtrim
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.nailtrack
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Clawtrim/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  ClawtrimTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ClawtrimTests
+      - path: Clawtrim.storekit
+    dependencies:
+      - target: Clawtrim
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.nailtrack.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  ClawtrimUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: ClawtrimUITests
+    dependencies:
+      - target: Clawtrim
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.nailtrack.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Clawtrim:
+    build:
+      targets:
+        Clawtrim: all
+        ClawtrimTests: [test]
+        ClawtrimUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Clawtrim.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Clawtrim.storekit
+      targets:
+        - ClawtrimTests
+        - ClawtrimUITests
+    archive:
+      config: Release

@@ -1,0 +1,40 @@
+{
+  "identifier": "storekit-config",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {},
+  "subscriptionGroups": [
+    {
+      "id": "1",
+      "localizations": [],
+      "name": "Clawtrim Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "1.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "sub1",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Recurring trim reminders based on custom interval per pet",
+              "displayName": "Clawtrim Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "clawtrim_pro_reminders",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Clawtrim Pro Monthly",
+          "subscriptionGroupID": "1",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
